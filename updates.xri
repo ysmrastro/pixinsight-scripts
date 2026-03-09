@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xri version="1.0">
+   <description>
+      <title>Manual Image Solver</title>
+      <brief_description>Manual plate solver for PixInsight</brief_description>
+   </description>
+   <platform os="all" arch="noarch" version="1.8.9:9.9.9">
+      <package fileName="ManualImageSolver-1.3.2.zip"
+               sha1="f18c11d12ccd0f84c4cc3c87d72217d2f856b644"
+               type="script"
+               releaseDate="20260308">
+         <title>Manual Image Solver</title>
+         <description>
+            <p>Manual plate solver: interactively identify stars and compute a TAN-projection WCS solution.</p>
+         </description>
+      </package>
+   </platform>
+</xri>

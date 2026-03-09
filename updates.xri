@@ -16,7 +16,7 @@
          </description>
       </package>
       <package fileName="SplitImageSolver-1.0.0.zip"
-               sha1="464f3c15d9408e672d4ae4c015ad3f330c3210dd"
+               sha1="41b259f48fff6768fbb5c36f41193379d2119e05"
                type="script"
                releaseDate="20260309">
          <title>Split Image Solver</title>

@@ -42,6 +42,15 @@ for SOURCE in "${SOURCES[@]}"; do
         continue
     fi
 
+    # 同じパッケージの旧バージョン zip を削除
+    PACKAGE_PREFIX=$(echo "${ZIP_NAME}" | sed 's/-[0-9].*$//')
+    for OLD_ZIP in "${SCRIPT_DIR}/${PACKAGE_PREFIX}"-*.zip; do
+        if [[ -f "${OLD_ZIP}" && "$(basename "${OLD_ZIP}")" != "${ZIP_NAME}" ]]; then
+            rm "${OLD_ZIP}"
+            echo "削除: $(basename "${OLD_ZIP}")（旧バージョン）"
+        fi
+    done
+
     # zip をコピー
     cp "${ZIP_PATH}" "${SCRIPT_DIR}/"
     echo "コピー: ${ZIP_NAME}"

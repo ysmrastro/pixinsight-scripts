@@ -5,20 +5,13 @@
       <brief_description>PixInsight scripts by ysmr3104</brief_description>
    </description>
    <platform os="all" arch="noarch" version="1.8.9:9.9.9">
-
-      <package fileName="ManualImageSolver-1.3.3.zip"
-               sha1="51617608e25defd73d822370548339650c0752fe"
-               type="script"
-               releaseDate="20260313">
+      <package fileName="ManualImageSolver-1.3.3.zip" sha1="51617608e25defd73d822370548339650c0752fe" type="script" releaseDate="20260313">
          <title>Manual Image Solver</title>
          <description>
             <p>Manual plate solver: interactively identify stars and compute a TAN-projection WCS solution.</p>
          </description>
       </package>
-      <package fileName="SplitImageSolver-1.1.0.zip"
-               sha1="292ea65e45b9fe1c620da4ce874954068bc3a30f"
-               type="script"
-               releaseDate="20260313">
+      <package fileName="SplitImageSolver-1.1.0.zip" sha1="292ea65e45b9fe1c620da4ce874954068bc3a30f" type="script" releaseDate="20260313">
          <title>Split Image Solver</title>
          <description>
             <p>Automatic plate solver using astrometry.net API or local solve-field. Supports single-image and split-tile solve with WCS application.</p>
@@ -26,3 +19,4 @@
       </package>
    </platform>
 </xri>
+<Signature developerId="ysmr3104" timestamp="2026-03-13T11:59:39.789Z" encoding="Base64">XwH/a54doj5Gf2FWsP67Xvz+M/DvwaKMdiGs92B0VIeYd9uSqyqMVSi+RsLaZl1+CiQS0K929qZOmCCOZJSKBw==</Signature>

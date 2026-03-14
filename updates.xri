@@ -11,7 +11,7 @@
             <p>Manual plate solver: interactively identify stars and compute a TAN-projection WCS solution.</p>
          </description>
       </package>
-      <package fileName="SplitImageSolver-1.1.0.zip" sha1="292ea65e45b9fe1c620da4ce874954068bc3a30f" type="script" releaseDate="20260313">
+      <package fileName="SplitImageSolver-1.1.1.zip" sha1="d8c3fbcdda939e86bf543b2dfb05cc2cc12d6a15" type="script" releaseDate="20260314">
          <title>Split Image Solver</title>
          <description>
             <p>Automatic plate solver using astrometry.net API or local solve-field. Supports single-image and split-tile solve with WCS application.</p>
@@ -19,4 +19,4 @@
       </package>
    </platform>
 </xri>
-<Signature developerId="ysmr3104" timestamp="2026-03-13T11:59:39.789Z" encoding="Base64">XwH/a54doj5Gf2FWsP67Xvz+M/DvwaKMdiGs92B0VIeYd9uSqyqMVSi+RsLaZl1+CiQS0K929qZOmCCOZJSKBw==</Signature>
+<Signature developerId="ysmr3104" timestamp="2026-03-14T08:16:00.103Z" encoding="Base64">MdiX0c0er7YUfSuVAGryPNLvUD31WjjBoE9cRNVSb1gm063WiQ4g9Jo6JtRkttNnwbp0fZMJx+DXuoeFH0uQCw==</Signature>

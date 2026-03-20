@@ -5,7 +5,7 @@
       <brief_description>PixInsight scripts by ysmr3104</brief_description>
    </description>
    <platform os="all" arch="noarch" version="1.8.9:9.9.9">
-      <package fileName="ManualImageSolver-1.3.3.zip" sha1="51617608e25defd73d822370548339650c0752fe" type="script" releaseDate="20260313">
+      <package fileName="ManualImageSolver-1.4.0.zip" sha1="185b75e4921be2e34145f951649df5333a21f6d8" type="script" releaseDate="20260320">
          <title>Manual Image Solver</title>
          <description>
             <p>Manual plate solver: interactively identify stars and compute a TAN-projection WCS solution.</p>
@@ -19,4 +19,3 @@
       </package>
    </platform>
 </xri>
-<Signature developerId="ysmr3104" timestamp="2026-03-14T08:16:00.103Z" encoding="Base64">MdiX0c0er7YUfSuVAGryPNLvUD31WjjBoE9cRNVSb1gm063WiQ4g9Jo6JtRkttNnwbp0fZMJx+DXuoeFH0uQCw==</Signature>

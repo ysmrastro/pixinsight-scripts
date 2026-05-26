@@ -20,13 +20,21 @@
          </description>
       </package>
    </platform>
-   <platform os="all" arch="noarch" version="1.8.9:9.9.9">
+   <platform os="all" arch="noarch" version="1.8.9:1.9.3">
       <package fileName="SplitImageSolver-1.2.0.zip" sha1="5386e8a4e032f8d6c16516ebd8ddb8bcc99e3093" type="script" releaseDate="20260320">
          <title>Split Image Solver</title>
          <description>
-            <p>Automatic plate solver using astrometry.net API or local solve-field. Supports single-image and split-tile solve with WCS application.</p>
+            <p>Automatic plate solver using astrometry.net API or local solve-field (SpiderMonkey runtime / PixInsight &lt;= 1.9.3)</p>
+         </description>
+      </package>
+   </platform>
+   <platform os="all" arch="noarch" version="1.9.4:9.9.9">
+      <package fileName="SplitImageSolver-2.0.0.zip" sha1="22f56632b9bfa6a0e1b9d42f92dd961883774469" type="script" releaseDate="20260527">
+         <title>Split Image Solver</title>
+         <description>
+            <p>Automatic plate solver using astrometry.net API or local solve-field (V8 runtime / PixInsight &gt;= 1.9.4)</p>
          </description>
       </package>
    </platform>
 </xri>
-<Signature developerId="ysmr3104" timestamp="2026-05-26T14:45:46.286Z" encoding="Base64">a9PDhIyp692GQsaZAltPHyeJyoMWl6LoRv/qeYbHFeK+l5/cGujw997+yf7rIT49txtQcl1PAUMltOScvURGBQ==</Signature>
+<Signature developerId="ysmr3104" timestamp="2026-05-26T22:33:39.784Z" encoding="Base64">XDabbqQfJQtYpr6K60mrDELNIRcCnWmNw0i8659q6n6nE6jRuMXJvsl9Y6xsNSJtUo945ZnFJ9MXaAa2TOMlBA==</Signature>

@@ -25,7 +25,7 @@ PixInsight 向け手動プレートソルバー。画像上の星を手動でク
 以下の URL を PixInsight のリポジトリリストに追加してください。
 
 ```
-https://raw.githubusercontent.com/ysmrastro/pixinsight-scripts/main/updates.xri
+https://ysmrastro.github.io/pixinsight-scripts/updates.xri
 ```
 
 **手順:**

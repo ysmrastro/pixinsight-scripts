@@ -126,7 +126,6 @@ gh pr merge --merge --delete-branch
 ### 署名について
 
 - 開発者 ID: `ysmr3104`
-- 鍵ファイル: `~/Documents/PixInsight/ysmr3104.xssk`
 - `.js` ファイルへの署名: Execute Script での実行に必要
 - `updates.xri` への署名: Check for Updates でのリポジトリ検証に必要
 - 中間ファイル（各ソースリポジトリ内の `updates*.xri`）への署名は不要

@@ -19,8 +19,8 @@ SOURCES=(
 
 echo "=== PixInsight スクリプト配信リポジトリ統合 ==="
 
-# 1. 各リポジトリから zip をコピーし、package 要素を収集
-PACKAGES=""
+# 1. 各リポジトリから zip をコピーし、<platform> ブロックを収集
+ALL_PLATFORMS=""
 COPIED=0
 
 for SOURCE in "${SOURCES[@]}"; do
@@ -33,33 +33,43 @@ for SOURCE in "${SOURCES[@]}"; do
         continue
     fi
 
-    # xri から fileName を取得
-    ZIP_NAME=$(sed -n 's/.*fileName="\([^"]*\)".*/\1/p' "${XRI_PATH}")
-    ZIP_PATH="${REPO_DIR}/${ZIP_NAME}"
+    # xri 内の全 zip fileName を取得
+    ZIP_NAMES=$(sed -n 's/.*fileName="\([^"]*\.zip\)".*/\1/p' "${XRI_PATH}")
 
-    if [[ ! -f "${ZIP_PATH}" ]]; then
-        echo "スキップ: ${ZIP_PATH} が見つかりません"
+    if [[ -z "${ZIP_NAMES}" ]]; then
+        echo "スキップ: ${XRI_PATH} に zip ファイルの参照がありません"
         continue
     fi
 
-    # 同じパッケージの旧バージョン zip を削除
-    PACKAGE_PREFIX=$(echo "${ZIP_NAME}" | sed 's/-[0-9].*$//')
+    # パッケージプレフィックスを取得（最初の zip 名から）
+    FIRST_ZIP=$(echo "${ZIP_NAMES}" | head -1)
+    PACKAGE_PREFIX=$(echo "${FIRST_ZIP}" | sed 's/-[0-9].*$//')
+
+    # 全 zip をコピー
+    for ZIP_NAME in ${ZIP_NAMES}; do
+        ZIP_PATH="${REPO_DIR}/${ZIP_NAME}"
+        if [[ ! -f "${ZIP_PATH}" ]]; then
+            echo "警告: ${ZIP_PATH} が見つかりません（スキップ）"
+            continue
+        fi
+        cp "${ZIP_PATH}" "${SCRIPT_DIR}/"
+        echo "コピー: ${ZIP_NAME}"
+    done
+
+    # このパッケージの旧バージョン zip（xri に含まれないもの）を削除
     for OLD_ZIP in "${SCRIPT_DIR}/${PACKAGE_PREFIX}"-*.zip; do
-        if [[ -f "${OLD_ZIP}" && "$(basename "${OLD_ZIP}")" != "${ZIP_NAME}" ]]; then
+        [[ -f "${OLD_ZIP}" ]] || continue
+        BASENAME=$(basename "${OLD_ZIP}")
+        if ! echo "${ZIP_NAMES}" | grep -qF "${BASENAME}"; then
             rm "${OLD_ZIP}"
-            echo "削除: $(basename "${OLD_ZIP}")（旧バージョン）"
+            echo "削除: ${BASENAME}（旧バージョン）"
         fi
     done
 
-    # zip をコピー
-    cp "${ZIP_PATH}" "${SCRIPT_DIR}/"
-    echo "コピー: ${ZIP_NAME}"
-
-    # package 要素を抽出（<package> から </package> まで）
-    # 元 xri のインデント（6スペース）を維持してそのまま使用
-    PACKAGE=$(sed -n '/<package /,/<\/package>/p' "${XRI_PATH}")
-    PACKAGES="${PACKAGES}
-${PACKAGE}"
+    # <platform> ブロック全体を抽出（複数ブロック対応）
+    PLATFORM_BLOCKS=$(awk '/<platform /,/<\/platform>/' "${XRI_PATH}")
+    ALL_PLATFORMS="${ALL_PLATFORMS}
+${PLATFORM_BLOCKS}"
 
     COPIED=$((COPIED + 1))
 done
@@ -77,14 +87,12 @@ cat > "${SCRIPT_DIR}/updates.xri" << XMLEOF
       <title>ysmr3104 PixInsight Scripts</title>
       <brief_description>PixInsight scripts by ysmr3104</brief_description>
    </description>
-   <platform os="all" arch="noarch" version="1.8.9:9.9.9">
-${PACKAGES}
-   </platform>
+${ALL_PLATFORMS}
 </xri>
 XMLEOF
 
 echo ""
 echo "=== 統合完了 ==="
-echo "  updates.xri に ${COPIED} 個のパッケージを統合しました"
+echo "  updates.xri に ${COPIED} 個のソースを統合しました"
 echo ""
 cat "${SCRIPT_DIR}/updates.xri"

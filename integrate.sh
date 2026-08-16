@@ -13,8 +13,8 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # ソースリポジトリの定義（パス:xriファイル名）
 SOURCES=(
-    "$HOME/projects/manual-image-solver/repository:updates.xri"
-    "$HOME/projects/split-image-solver/repository:updates-split.xri"
+    "$HOME/projects/pixinsight/manual-image-solver/repository:updates.xri"
+    "$HOME/projects/pixinsight/split-image-solver/repository:updates-split.xri"
 )
 
 echo "=== PixInsight スクリプト配信リポジトリ統合 ==="

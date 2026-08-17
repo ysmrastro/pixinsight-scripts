@@ -38,6 +38,14 @@ https://ysmrastro.github.io/pixinsight-scripts/
 
 PixInsight のバージョンに応じて適切なパッケージ（SpiderMonkey版 / V8版）が自動的に配信されます。
 
+## 支援について
+
+収録スクリプトはすべて無料で公開しており、今後も無料のままです。役に立った、開発を続けてほしいと思っていただけたら、GitHub Sponsors から支援いただけます。
+
+[![Sponsor](https://img.shields.io/badge/Sponsor-ysmr3104-ea4aaa?logo=githubsponsors)](https://github.com/sponsors/ysmr3104)
+
+支援は任意です。バグ報告や機能要望も同じくらいありがたいです。
+
 ---
 
 ## 開発者向け: リリース手順

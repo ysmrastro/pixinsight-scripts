@@ -15,6 +15,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 SOURCES=(
     "$HOME/projects/pixinsight/manual-image-solver/repository:updates.xri"
     "$HOME/projects/pixinsight/split-image-solver/repository:updates-split.xri"
+    "$HOME/projects/pixinsight/meteor-composer/repository:updates-meteor.xri"
 )
 
 echo "=== PixInsight スクリプト配信リポジトリ統合 ==="

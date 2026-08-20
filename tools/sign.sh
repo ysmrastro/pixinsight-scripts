@@ -155,7 +155,7 @@ remote "cat '${REPORT}'"
 
 # 失敗が 1 件でもあれば非ゼロで返す。呼び出し側（build-*.sh やリリース手順）
 # がそのまま続くと、署名なしのまま配布物が出来てしまう。
-if remote "grep -qE '^(FAILED|MISSING)' '${REPORT}'"; then
+if remote "grep -qE '^(FAILED|MISSING|INVALID)' '${REPORT}'"; then
     echo
     echo "エラー: 署名できなかった対象があります。" >&2
     exit 1

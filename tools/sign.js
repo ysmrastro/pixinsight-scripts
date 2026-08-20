@@ -147,6 +147,28 @@ function readPassword(spec) {
 
 // --- Signing ---------------------------------------------------------------
 
+// Read back what was just written and ask PixInsight whether it verifies.
+//
+// "The signature file was generated" and "the signature verifies" are not the
+// same statement, and only the second one matters: an invalid signature is
+// worse than none at all, because execution of a script with an invalid
+// signature is forbidden regardless of the Preferences setting that allows
+// unsigned scripts. Signing and then shipping without checking would turn a
+// missing signature into a hard failure for every user.
+//
+// Both verifiers return { valid, developerId, timestamp, ... } and set valid
+// only when the signature exists AND matches the file.
+function verify(target) {
+   var ext = File.extractExtension(target).toLowerCase();
+   var sig = (ext === ".xri") ? Security.getXMLSignature(target)
+                              : Security.getScriptSignature(target);
+   return {
+      valid: sig.valid,
+      developerId: sig.developerId,
+      timestamp: sig.timestamp
+   };
+}
+
 function signOne(target, keysFile, password, entitlements) {
    var ext = File.extractExtension(target).toLowerCase();
 
@@ -230,7 +252,17 @@ function main() {
          }
          try {
             var out = signOne(target, job.keysFile, password, job.entitlements);
+            // Verify the target, not the .xsgn: verification is a statement
+            // about the pair, and it is the script that has to run.
+            var v = verify(target);
+            if (!v.valid) {
+               say("INVALID  " + out
+                   + "  (generated, but does not verify against " + target + ")");
+               ++failed;
+               continue;
+            }
             say("SIGNED   " + out);
+            say("         verified: " + v.developerId + " at " + v.timestamp);
             ++signed;
          } catch (x) {
             var message = x.message === undefined ? ("" + x) : x.message;

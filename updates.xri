@@ -4,8 +4,12 @@
       <title>ysmr3104 PixInsight Scripts</title>
       <brief_description>PixInsight scripts by ysmr3104</brief_description>
    </description>
+
    <platform os="all" arch="noarch" version="1.8.9:1.9.3">
-      <package fileName="ManualImageSolver-1.4.1.zip" sha1="47b4b3dc819237e0eefcc1c5d02dc019b120b7f1" type="script" releaseDate="20260324">
+      <package fileName="ManualImageSolver-1.4.1.zip"
+               sha1="47b4b3dc819237e0eefcc1c5d02dc019b120b7f1"
+               type="script"
+               releaseDate="20260324">
          <title>Manual Image Solver</title>
          <description>
             <p>Manual plate solver: interactively identify stars and compute a TAN-projection WCS solution.</p>
@@ -13,7 +17,10 @@
       </package>
    </platform>
    <platform os="all" arch="noarch" version="1.9.4:9.9.9">
-      <package fileName="ManualImageSolver-2.0.1.zip" sha1="12e9287148d61b0ad88beb8099c328822a2bd916" type="script" releaseDate="20260819">
+      <package fileName="ManualImageSolver-2.0.1.zip"
+               sha1="12e9287148d61b0ad88beb8099c328822a2bd916"
+               type="script"
+               releaseDate="20260819">
          <title>Manual Image Solver</title>
          <description>
             <p>Manual plate solver: interactively identify stars and compute a TAN-projection WCS solution.</p>
@@ -21,7 +28,10 @@
       </package>
    </platform>
    <platform os="all" arch="noarch" version="1.8.9:1.9.3">
-      <package fileName="SplitImageSolver-1.2.0.zip" sha1="5386e8a4e032f8d6c16516ebd8ddb8bcc99e3093" type="script" releaseDate="20260320">
+      <package fileName="SplitImageSolver-1.2.0.zip"
+               sha1="5386e8a4e032f8d6c16516ebd8ddb8bcc99e3093"
+               type="script"
+               releaseDate="20260320">
          <title>Split Image Solver</title>
          <description>
             <p>Automatic plate solver using astrometry.net API or local solve-field (SpiderMonkey runtime / PixInsight &lt;= 1.9.3)</p>
@@ -29,7 +39,10 @@
       </package>
    </platform>
    <platform os="all" arch="noarch" version="1.9.4:9.9.9">
-      <package fileName="SplitImageSolver-2.0.1.zip" sha1="2f60ee6a5ffc93921e6c81b01b7172f7de0475fa" type="script" releaseDate="20260819">
+      <package fileName="SplitImageSolver-2.0.1.zip"
+               sha1="2f60ee6a5ffc93921e6c81b01b7172f7de0475fa"
+               type="script"
+               releaseDate="20260819">
          <title>Split Image Solver</title>
          <description>
             <p>Automatic plate solver using astrometry.net API or local solve-field (V8 runtime / PixInsight &gt;= 1.9.4)</p>
@@ -37,7 +50,10 @@
       </package>
    </platform>
    <platform os="all" arch="noarch" version="1.9.4:9.9.9">
-      <package fileName="MeteorComposer-1.0.0.zip" sha1="c2a341582ecae0eb80ada347b883424f401dbb63" type="script" releaseDate="20260819">
+      <package fileName="MeteorComposer-1.0.1.zip"
+               sha1="ac21ef7e3e3ad6754a52cf95e19321c033ca22fc"
+               type="script"
+               releaseDate="20260820">
          <title>MeteorComposer</title>
          <description>
             <p>Detect meteors across a night of registered frames, screen the candidates by eye, and composite the accepted ones onto a master light.</p>
@@ -45,4 +61,3 @@
       </package>
    </platform>
 </xri>
-<Signature developerId="ysmr3104" timestamp="2026-08-19T04:12:18.278Z" encoding="Base64">S/bTu+ggDsKDuRVs8P/SzdoooAo2vssCb16x4RjAUnC8HstIc1+qqe/PJNKix2IirCj6BymgQWkp1A47sD1VAg==</Signature>

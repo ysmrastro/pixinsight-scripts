@@ -37,7 +37,7 @@
       </package>
    </platform>
    <platform os="all" arch="noarch" version="1.9.4:9.9.9">
-      <package fileName="MeteorComposer-1.1.0.zip" sha1="69b5351b8426c6c4d3b566e7ec543fb490a34c74" type="script" releaseDate="20260829">
+      <package fileName="MeteorComposer-1.2.0.zip" sha1="8bd94c5d4ea558f8d10461627c32f8a766418505" type="script" releaseDate="20260830">
          <title>MeteorComposer</title>
          <description>
             <p>Detect meteors across a night of registered frames, screen the candidates by eye, and composite the accepted ones onto a master light.</p>
@@ -45,4 +45,4 @@
       </package>
    </platform>
 </xri>
-<Signature developerId="ysmr3104" timestamp="2026-08-29T06:39:30.998Z" encoding="Base64">OgK0VEAMapjjqzX9e/vL39cmPj/jUi54vXhZwHkVyBjnNDcUb92fJrUdN2cb2hd/kbQDHfDWYR3GZl8RVJRyBg==</Signature>
+<Signature developerId="ysmr3104" timestamp="2026-08-29T16:35:18.288Z" encoding="Base64">eDh5tJq5/Jhz8LGhs3JXOUPS8u3ASzC0rgzyxfeS9DG+gVQXWvaJXkQZLRVcu3ZK125PCk52RPDmhKtpp22BBg==</Signature>

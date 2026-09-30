@@ -12,8 +12,8 @@
 #   .xri        ->  ファイル自体に署名を埋め込む（書き換わる）
 #
 # 例:
-#   tools/sign.sh '~/projects/pixinsight/meteor-composer/javascript/MeteorComposer.js'
-#   tools/sign.sh '~/projects/pixinsight/pixinsight-scripts/updates.xri'
+#   tools/sign.sh '~/private/pixinsight/meteor-composer/javascript/MeteorComposer.js'
+#   tools/sign.sh '~/private/pixinsight/pixinsight-scripts/updates.xri'
 #
 # ~ を含むパスはシングルクォートで囲んでください。展開は署名機側で行います
 # （編集機と署名機でユーザー名が違うため）。

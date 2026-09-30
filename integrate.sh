@@ -13,9 +13,9 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # ソースリポジトリの定義（パス:xriファイル名）
 SOURCES=(
-    "$HOME/projects/pixinsight/manual-image-solver/repository:updates.xri"
-    "$HOME/projects/pixinsight/split-image-solver/repository:updates-split.xri"
-    "$HOME/projects/pixinsight/meteor-composer/repository:updates-meteor.xri"
+    "$HOME/private/pixinsight/manual-image-solver/repository:updates.xri"
+    "$HOME/private/pixinsight/split-image-solver/repository:updates-split.xri"
+    "$HOME/private/pixinsight/meteor-composer/repository:updates-meteor.xri"
 )
 
 echo "=== PixInsight スクリプト配信リポジトリ統合 ==="
@@ -29,9 +29,12 @@ for SOURCE in "${SOURCES[@]}"; do
     XRI_FILE="${SOURCE##*:}"
     XRI_PATH="${REPO_DIR}/${XRI_FILE}"
 
+    # 見つからなければ止める。スキップすると、そのパッケージが updates.xri から
+    # 黙って消え、署名して配信した時点で利用者の手元から配信が消える
+    # （~/projects から ~/private へ移したあと、全ソースがこの状態になっていた）
     if [[ ! -f "${XRI_PATH}" ]]; then
-        echo "スキップ: ${XRI_PATH} が見つかりません"
-        continue
+        echo "エラー: ${XRI_PATH} が見つかりません。SOURCES のパスを確認してください" >&2
+        exit 1
     fi
 
     # xri 内の全 zip fileName を取得
@@ -50,8 +53,8 @@ for SOURCE in "${SOURCES[@]}"; do
     for ZIP_NAME in ${ZIP_NAMES}; do
         ZIP_PATH="${REPO_DIR}/${ZIP_NAME}"
         if [[ ! -f "${ZIP_PATH}" ]]; then
-            echo "警告: ${ZIP_PATH} が見つかりません（スキップ）"
-            continue
+            echo "エラー: ${ZIP_PATH} が見つかりません（xri が参照している zip が無い）" >&2
+            exit 1
         fi
         cp "${ZIP_PATH}" "${SCRIPT_DIR}/"
         echo "コピー: ${ZIP_NAME}"

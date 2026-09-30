@@ -43,12 +43,12 @@ GitHub Pages で配信しています。
 
 ```bash
 SOURCES=(
-    "$HOME/projects/pixinsight/manual-image-solver/repository:updates.xri"
-    "$HOME/projects/pixinsight/split-image-solver/repository:updates-split.xri"
+    "$HOME/private/pixinsight/manual-image-solver/repository:updates.xri"
+    "$HOME/private/pixinsight/split-image-solver/repository:updates-split.xri"
 )
 ```
 
-パスは `~/projects/pixinsight/` 配下を前提としています。リポジトリの配置を変える場合はここも更新してください。
+パスは `~/private/pixinsight/` 配下を前提としています。リポジトリの配置を変える場合はここも更新してください。
 
 ## バージョン別配布
 

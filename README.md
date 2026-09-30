@@ -80,11 +80,11 @@ PixInsight で **Script > Development > CodeSign** を開き、変更した `.js
 
 ```bash
 # ManualImageSolver
-cd ~/projects/pixinsight/manual-image-solver
+cd ~/private/pixinsight/manual-image-solver
 bash build-release.sh
 
 # SplitImageSolver
-cd ~/projects/pixinsight/split-image-solver
+cd ~/private/pixinsight/split-image-solver
 bash build-split-release.sh
 ```
 
@@ -95,7 +95,7 @@ bash build-split-release.sh
 このリポジトリで `integrate.sh` を実行し、全スクリプトの配信情報を統合した `updates.xri` を生成します。
 
 ```bash
-cd ~/projects/pixinsight/pixinsight-scripts
+cd ~/private/pixinsight/pixinsight-scripts
 bash integrate.sh
 ```
 
@@ -107,13 +107,13 @@ PixInsight で **Script > Development > CodeSign** を開き、生成された `
 
 署名対象:
 ```
-/Users/ysmr/projects/pixinsight/pixinsight-scripts/updates.xri
+~/private/pixinsight/pixinsight-scripts/updates.xri
 ```
 
 #### 6. PR 作成・マージ・プッシュ
 
 ```bash
-cd ~/projects/pixinsight/pixinsight-scripts
+cd ~/private/pixinsight/pixinsight-scripts
 git checkout -b feature/<release-name>
 git add updates.xri *.zip
 git commit -m "リリース: <PackageName> v<VERSION>"
